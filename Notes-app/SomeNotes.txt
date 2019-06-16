@@ -1,0 +1,4 @@
+Node.js:
+- each js file has its own scope
+    - but can using model.export to share variable, but have to have a instance ot receivde its
+- require function, which is require a module (like include in c/c++) 
