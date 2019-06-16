@@ -75,12 +75,16 @@ yargs.command({
 
 yargs.command({
     command:'read',
-    describe:'read note',
-    // handler: function(){
-    //     console.log('reading note!')
-    // }
+    describe:'read a notes',
+    builder:{// it is on an object , define option for the commadn support
+        title: { //it is also an obj
+            describe:'Note title',
+            demandOption:true,  // force this property is needed if it is ture
+            type: 'string' // specific teh type of input
+        }
+    }, 
     handler(argv){ //handler, when the command is invoked
-        notes.addNote(argv.title, argv.body)
+        notes.readNote(argv.title)
     }
 })
 
