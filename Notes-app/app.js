@@ -67,12 +67,9 @@ yargs.command({
 
 yargs.command({
     command:'list',
-    describe:'list note',
-    // handler: function(){
-    //     console.log('listing note!')
-    // }
-    handler(argv){ //handler, when the command is invoked
-        notes.addNote(argv.title, argv.body)
+    describe:'list all notes',
+    handler(){ //handler, when the command is invoked
+        notes.listNote()
     }
 })
 

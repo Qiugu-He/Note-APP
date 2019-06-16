@@ -75,6 +75,16 @@ const removeNote = (title) => {
     }
 }
 
+/* list Notes
+*/
+const listNote = () => {
+    const notes = loadNotes() //loading data from exit file
+    console.log(chalk.green.inverse('Your notes:'))
+    notes.forEach((note)=>{
+        console.log('Title: ' + note.title)
+    })
+}
+
 /* saveNote
     -update the file
  */
@@ -101,5 +111,6 @@ const loadNotes = ()=>{
 module.exports ={
     getNotes: getNotes,
     addNote: addNote ,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNote:listNote
 }
