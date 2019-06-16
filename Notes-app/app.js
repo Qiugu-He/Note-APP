@@ -27,9 +27,13 @@ yargs.command({
             type: 'string' // specific teh type of input
         }
     }, 
-    handler: function(argv){ //handler, when the command is invoked
-        notes.addNote(argv.title, argv.body)
+    // handler: function(argv){ //handler, when the command is invoked
+    //     notes.addNote(argv.title, argv.body)
 
+    // }
+
+    handler(argv){ //handler, when the command is invoked
+        notes.addNote(argv.title, argv.body)
     }
 })
 
@@ -50,25 +54,36 @@ yargs.command({
             type: 'string' // specific teh type of input
         }
     }, 
-    handler: function(argv){ //handler, when the command is invoked
-        notes.removeNote(argv.title)
+    // handler: function(argv){ //handler, when the command is invoked
+    //     notes.removeNote(argv.title)
 
+    // }
+
+    
+    handler(argv){ //handler, when the command is invoked
+        notes.removeNote(argv.title, argv.body)
     }
 })
 
 yargs.command({
     command:'list',
     describe:'list note',
-    handler: function(){
-        console.log('listing note!')
+    // handler: function(){
+    //     console.log('listing note!')
+    // }
+    handler(argv){ //handler, when the command is invoked
+        notes.addNote(argv.title, argv.body)
     }
 })
 
 yargs.command({
     command:'read',
     describe:'read note',
-    handler: function(){
-        console.log('reading note!')
+    // handler: function(){
+    //     console.log('reading note!')
+    // }
+    handler(argv){ //handler, when the command is invoked
+        notes.addNote(argv.title, argv.body)
     }
 })
 
