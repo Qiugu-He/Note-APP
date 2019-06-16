@@ -37,9 +37,22 @@ yargs.command({
 
 yargs.command({
     command:'remove',
-    describe:'Remove a note',
-    handler: function(){
-        console.log('Removing a note!')
+    describe:'Remove an existing note',
+    builder:{// it is on an object , define option for the commadn support
+        title: { //it is also an obj
+            describe:'Note title',
+            demandOption:true,  // force this property is needed if it is ture
+            type: 'string' // specific teh type of input
+        },
+        body: { //it is also an obj
+            describe:'Note body',
+            demandOption:false,  // force this property is needed if it is ture
+            type: 'string' // specific teh type of input
+        }
+    }, 
+    handler: function(argv){ //handler, when the command is invoked
+        notes.removeNote(argv.title)
+
     }
 })
 
